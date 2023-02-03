@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>兔年快乐</title>
+		<link href="css/lianjie.css" type="text/css" rel="stylesheet" />
+		<script type="text/javascript" src="js/ajsxa.js"></script>
+
+
+	</head>
+	<body>
+		<div>
+			<div class="gn_box">
+				<h1>
+					<font color="#0000ff">2</font>
+					<font color="#ffff00">0</font>
+					<font color="#BA0045">2</font>
+					<font color="#A3005C">3</font>
+					<font color="#8C0073">年</font>
+					<font color="#75008A">-</font>
+					<font color="#5E00A1">新</font>
+					<font color="#4700B8">年</font>
+					<font color="#3000CF">倒</font>
+					<font color="#1900E6">计</font>
+					<font color="#0200FD">时</font><br />
+					<font color="#00ff7f">兔</font>
+					<font color="#ffff00">年</font>
+					<font color="#0000ff">快</font>
+					<font color="#A3005C">乐</font>
+				</h1>
+				<center>
+					<div id="CountMsg" class="HotDate">
+						<span id="t_d">626天</span>
+						<span id="t_h">6 时</span>
+						<span id="t_m">26 分</span>
+						<span id="t_s">26 秒</span>
+					</div>
+				</center>
+				<script type="text/javascript">
+					function getRTime() {
+						var EndTime = new Date('2023/01/21 00:00:00');
+						var NowTime = new Date();
+						var t = EndTime.getTime() - NowTime.getTime();
+						var d = Math.floor(t / 1000 / 60 / 60 / 24);
+						var h = Math.floor(t / 1000 / 60 / 60 % 24);
+						var m = Math.floor(t / 1000 / 60 % 60);
+						var s = Math.floor(t / 1000 % 60);
+						document.getElementById("t_d").innerHTML = d + " 天";
+						document.getElementById("t_h").innerHTML = h + " 时";
+						document.getElementById("t_m").innerHTML = m + " 分";
+						document.getElementById("t_s").innerHTML = s + " 秒";
+					}
+					setInterval(getRTime, 1000);
+				</script>
+			</div>
+
+
+			<div class="pqpq">
+				<h1>2022.............</h1>
+				<div class="rabbit"></div>
+				<h1>......</h1>
+				<div class="clouds"></div>
+				<h1>......</h1>
+				<div class="deng-box"></div>
+				<h1>..........2023</h1>
+			</div>
+			<!-- 灯笼 1 -->
+			<div class="deng-box">
+				<div class="deng">
+					<div class="xian"></div>
+					<div class="deng-a">
+						<div class="deng-b">
+							<div class="deng-t">春节</div>
+						</div>
+					</div>
+					<div class="shui shui-a"></div>
+					<div class="shui shui-b"></div>
+					<div class="shui shui-c"></div>
+				</div>
+			</div>
+
+			<!-- 灯笼 2 -->
+			<div class="deng-box1">
+				<div class="deng">
+					<div class="xian"></div>
+					<div class="deng-a">
+						<div class="deng-b">
+							<div class="deng-t">快乐</div>
+						</div>
+					</div>
+					<div class="shui shui-a"></div>
+					<div class="shui shui-b"></div>
+					<div class="shui shui-c"></div>
+				</div>
+			</div>
+
+
+
+
+
+
+	</body>
+</html>

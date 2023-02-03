@@ -1,0 +1,170 @@
+{
+    "header": [
+        " *   ",
+        " *   如非需要调试，本文件可删除",
+        " *   非专业人员可将本文件删除",
+        " *   详细介绍请参考: https://bazhan.wang/faq#INFO-JSON",
+        " *   "
+    ],
+    "resources": [
+        {
+            "url": "http://guozhivip.com/eat/",
+            "path": "index.html",
+            "saved": true,
+            "size": 9121,
+            "children": [
+                {
+                    "url": "http://guozhivip.com/eat/img/logo.png",
+                    "path": "img/logo.png",
+                    "saved": true,
+                    "size": 10614
+                },
+                {
+                    "url": "http://guozhivip.com/eat/js/jquery-1.11.1.min.js",
+                    "path": "js/jquery-1.11.1.min.js",
+                    "saved": true,
+                    "size": 95786
+                },
+                {
+                    "url": "http://guozhivip.com/eat/js/popper.min.js",
+                    "path": "js/popper.min.js",
+                    "saved": true,
+                    "size": 21260
+                },
+                {
+                    "url": "http://guozhivip.com/eat/js/bootstrap.min.js",
+                    "path": "js/bootstrap.min.js",
+                    "saved": true,
+                    "size": 60010
+                },
+                {
+                    "url": "http://guozhivip.com/eat/css/font-awesome.min.css",
+                    "path": "css/font-awesome.min.css",
+                    "saved": true,
+                    "size": 26668,
+                    "children": [
+                        {
+                            "url": "http://guozhivip.com/eat/fonts/fontawesome-webfont.eot?v=4.4.0",
+                            "path": "fonts/fontawesome-webfont.eot",
+                            "saved": true,
+                            "size": 68875
+                        },
+                        {
+                            "url": "http://guozhivip.com/eat/fonts/fontawesome-webfont.eot?#iefix&v=4.4.0",
+                            "path": "fonts/fontawesome-webfont.eot",
+                            "saved": true,
+                            "size": 68875
+                        },
+                        {
+                            "url": "http://guozhivip.com/eat/fonts/fontawesome-webfont.woff2?v=4.4.0",
+                            "path": "fonts/fontawesome-webfont.woff2",
+                            "saved": true,
+                            "size": 64464
+                        },
+                        {
+                            "url": "http://guozhivip.com/eat/fonts/fontawesome-webfont.woff?v=4.4.0",
+                            "path": "fonts/fontawesome-webfont.woff",
+                            "saved": true,
+                            "size": 81284
+                        },
+                        {
+                            "url": "http://guozhivip.com/eat/fonts/fontawesome-webfont.ttf?v=4.4.0",
+                            "path": "fonts/fontawesome-webfont.ttf",
+                            "saved": true,
+                            "size": 138204
+                        },
+                        {
+                            "url": "http://guozhivip.com/eat/fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular",
+                            "path": "img/fontawesome-webfont.svg",
+                            "saved": true,
+                            "size": 355981
+                        }
+                    ]
+                },
+                {
+                    "url": "http://guozhivip.com/eat/css/bootstrap.min.css",
+                    "path": "css/bootstrap.min.css",
+                    "saved": true,
+                    "size": 159515,
+                    "children": []
+                },
+                {
+                    "url": "http://guozhivip.com/eat/css/bootstrap-grid.min.css",
+                    "path": "css/bootstrap-grid.min.css",
+                    "saved": true,
+                    "size": 50935
+                },
+                {
+                    "url": "http://guozhivip.com/eat/css/eat-min.css?v1.1.7",
+                    "path": "css/eat-min.css",
+                    "saved": true,
+                    "size": 3036,
+                    "children": [
+                        {
+                            "url": "http://guozhivip.com/eat/img/bg.jpg",
+                            "path": "img/bg.jpg",
+                            "saved": true,
+                            "size": 3581
+                        }
+                    ]
+                },
+                {
+                    "url": "http://guozhivip.com/images/ic.ico",
+                    "path": "ic.ico",
+                    "saved": true,
+                    "size": 4286
+                }
+            ]
+        }
+    ],
+    "alias": "guozhivip-com-njd02fyq",
+    "info": {
+        "remark": [],
+        "title": "今天吃啥呀？",
+        "domain": "guozhivip.com",
+        "origin": "http://guozhivip.com",
+        "ip": "121.40.59.158",
+        "main": "index.html",
+        "url": "http://guozhivip.com/eat/",
+        "totalSize": "1.22 MB",
+        "request": {
+            "headers": {
+                "accept": "text/html,*/*",
+                "accept-language": "zh-CN,zh;q=0.9",
+                "cache-control": "no-cache",
+                "cookie": "",
+                "referer": "http://guozhivip.com/eat/",
+                "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36",
+                "x-scraper-website": "https://bazhan.wang/"
+            }
+        },
+        "response": {
+            "responseUrl": "http://guozhivip.com/eat/",
+            "redirects": [],
+            "statusCode": 200,
+            "headers": {
+                "date": "Mon, 30 Jan 2023 14:03:59 GMT",
+                "server": "Apache",
+                "last-modified": "Sun, 05 Dec 2021 10:11:24 GMT",
+                "etag": "\"200062-256e-5d2635cce411f\"",
+                "accept-ranges": "bytes",
+                "vary": "Accept-Encoding,User-Agent",
+                "content-length": "3745",
+                "connection": "close",
+                "content-type": "text/html"
+            }
+        },
+        "time": {
+            "start": "2023-01-30T14:03:58.788Z",
+            "end": "2023-01-30T14:04:00.274Z"
+        }
+    },
+    "options": {
+        "url": "http://guozhivip.com/eat/",
+        "referer": "",
+        "cookies": "",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36",
+        "formatter": [],
+        "filenameGenerator": "byType"
+    }
+}

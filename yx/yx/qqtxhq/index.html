@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <style>
+      body{
+        background-color:grey;
+        }
+      div{
+        display:grid;
+        width:300px;
+        height:120px;
+        border:2px solid white;
+        border-radius:30px;
+        margin-top:30px; 
+        }
+      .fg{
+        margin-top:30px;
+        }
+      img{
+        width:300px;
+        height:300px;
+        margin-top:20px;
+        }
+      .sr{
+        margin-top:10px;
+        }
+      input{
+        width:150px;
+        height:20px;
+        }
+      button{
+        border-radius:25px;
+        width:150px;
+        height:30px;
+        margin-bottom:10px;
+        }
+      *{
+        padding:0;
+        margin:0;
+        }
+    </style>
+  </head>
+  <body>
+    <center>
+      <div>
+        <p class="sr">请输入QQ号:</p>
+        <input type="text" id="qqh"/>
+        <br>
+        <center>
+          <button onclick="hq()">获取</button>
+        </center>
+      </div>
+      <br>
+      <p class="fg">-------------------------QQ头像--------------------------</p>
+      <img src="" id="tx">
+	</center>
+    <script>
+      function hq(){
+        var qq=document.getElementById("qqh").value;
+        var url="http://q2.qlogo.cn/headimg_dl?dst_uin="+qq+"&spec=100";
+        var img=document.getElementById("tx");
+        img.src=url;
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,531 @@
+<!doctype html>
+
+
+<style>
+  html,
+  body {
+    margin: 0px;
+    width: 520%;
+    height: 520%;
+    overflow: hidden;
+    background: rgb(240, 147, 170);
+  }
+
+  #canvas {
+    width: 520%;
+    height: 520%;
+  }
+</style>
+
+
+
+
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新年快乐</title>
+
+</head>
+
+<title>新年快乐</title>
+
+<style>
+  body {
+
+    overflow: hidden;
+
+    margin: 0;
+
+  }
+
+  h1 {
+
+    position: fixed;
+    top: 7%;
+
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    transform: translateY(-52.01314%);
+
+    font-family: 'Love Ya Like A Sister', cursive;
+
+    font-size: 50px;
+
+    color: #d84545;
+
+    padding: 20px;
+
+  }
+
+  h1 span {
+
+    position: fixed;
+
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    margin-top: 30px;
+
+    font-size: 40px;
+
+  }
+</style>
+
+
+
+<body>
+
+  <h1 id="h1"></h1>
+
+  <canvas>柒淏</canvas>
+  <!--canvas 画布-->
+
+  <script>
+
+    var canvas = document.querySelector("canvas"),
+
+      ctx = canvas.getContext("2d");
+
+    var ww, wh;
+
+    function onResize() {
+
+      ww = canvas.width = window.innerWidth;
+
+      wh = canvas.height = window.innerHeight;
+
+    }
+
+    ctx.strokeStyle = "red";
+
+    ctx.shadowBlur = 520;
+
+    ctx.shadowColor = "hsla(0, 100%, 60%,0.5)";
+
+    var precision = 520;
+
+    var hearts = [];
+
+    var mouseMoved = false;
+
+    function onMove(e) {
+
+      mouseMoved = true;
+
+      if (e.type === "touchmove") {
+
+        hearts.push(new Heart(e.touches[0].clientX, e.touches[0].clientY));
+
+        hearts.push(new Heart(e.touches[0].clientX, e.touches[0].clientY));
+
+      }
+
+      else {
+
+        hearts.push(new Heart(e.clientX, e.clientY));
+
+        hearts.push(new Heart(e.clientX, e.clientY));
+
+      }
+
+    }
+
+    var Heart = function (x, y) {
+
+      this.x = x || Math.random() * ww;
+
+      this.y = y || Math.random() * wh;
+
+      this.size = Math.random() * 2 + 1;
+
+      this.shadowBlur = Math.random() * 10;
+
+      this.speedX = (Math.random() + 0.2 - 0.6) * 8;
+
+      this.speedY = (Math.random() + 0.2 - 0.6) * 8;
+
+      this.speedSize = Math.random() * 0.05 + 0.01;
+
+      this.opacity = 1;
+
+      this.vertices = [];
+
+      for (var i = 0; i < precision; i++) {
+
+        var step = (i / precision - 0.5) * (Math.PI * 2);
+
+        var vector = {
+
+          x: (15 * Math.pow(Math.sin(step), 3)),
+
+          y: -(13 * Math.cos(step) - 5 * Math.cos(2 * step) - 2 * Math.cos(3 * step) - Math.cos(4 * step))
+
+        }
+
+        this.vertices.push(vector);
+
+      }
+
+    }
+
+    Heart.prototype.draw = function () {
+
+      this.size -= this.speedSize;
+
+      this.x += this.speedX;
+
+      this.y += this.speedY;
+
+      ctx.save();
+
+      ctx.translate(-1000, this.y);
+
+      ctx.scale(this.size, this.size);
+
+      ctx.beginPath();
+
+      for (var i = 0; i < precision; i++) {
+
+        var vector = this.vertices[i];
+
+        ctx.lineTo(vector.x, vector.y);
+
+      }
+
+      ctx.globalAlpha = this.size;
+
+      ctx.shadowBlur = Math.round((3 - this.size) * 10);
+
+      ctx.shadowColor = "hsla(0, 100%, 60%,0.5)";
+
+      ctx.shadowOffsetX = this.x + 1024;
+
+      ctx.globalCompositeOperation = "screen"
+
+      ctx.closePath();
+
+      ctx.fill()
+
+      ctx.restore();
+
+    };
+
+    function render(a) {
+
+      requestAnimationFrame(render);
+
+      hearts.push(new Heart())
+
+      ctx.clearRect(0, 0, ww, wh);
+
+      for (var i = 0; i < hearts.length; i++) {
+
+        hearts[i].draw();
+
+        if (hearts[i].size <= 0) {
+
+          hearts.splice(i, 1);
+
+          i--;
+
+        }
+
+      }
+
+    }
+
+
+
+
+    onResize();
+
+    window.addEventListener("mousemove", onMove);
+
+    window.addEventListener("touchmove", onMove);
+
+    window.addEventListener("resize", onResize);
+
+    requestAnimationFrame(render);
+
+    window.onload = function starttime() {
+
+      time(h1, '2023,01,01');
+
+      ptimer = setTimeout(starttime, 1024);
+
+    }
+
+    function time(obj, futimg) {
+
+      var nowtime = new Date().getTime();
+
+      var futruetime = new Date(futimg).getTime();
+
+      var msec = futruetime - nowtime;
+
+      var time = (msec / 1000);
+
+      var day = parseInt(time / 86400);
+
+      var hour = parseInt(time / 3600) - 24 * day;
+
+      var minute = parseInt(time % 3600 / 60);
+
+      var second = parseInt(time % 60);
+      obj.innerHTML = "<br>🎉🎇 🎆.... ....🎆🎇🎉<br> 距离2023年还有：</br>" + day + "天" + hour + "小时" + minute + "分" + second + "秒" + "<br><span>柒淏祝你跨年快乐<br>愿我所念的人平安喜乐，<br>愿我所想的事顺心如意。<br>鲜花开着祝福，笑容含着叮嘱，怀着亲人的关爱你拼搏一路;<br>汗水凝结誓言，努力将梦想放逐，牵着自己的智慧你挥洒辛苦。<br>新年是一个敲响成功的音符，祝福你明天更美好。<br>May the people I think of be safe and happy, <br>and may the things I think of be all right.<br>Flowers open blessing, with a smile telling, with their loved ones love you fighting all the way <br>Sweat condensed oath, efforts will dream to exile, holding his own wisdom you be hard. New Year is a sound successful notes, wish you a better tomorrow.<br>，，，，，，，，，，请不要回复六、、、、、、、、、、<br>-------未经柒淏允许请勿转发------<br>柒淏再一次祝你新年快乐<br>❤♥💘💖💝💓💗💗💙💛💜🖤🤍💟♡ღటబ❦❣❦❣బటღ♡💟🤍🖤💜💛💙💗💗💓💝💖💘♥❤</br></span>"
+
+
+      return true;
+
+    }
+
+
+  </script>
+  <div class="deng-box2">
+    <div class="deng">
+        <div class="xian">
+        </div>
+        <div class="deng-a">
+            <div class="deng-b">
+                <div class="deng-t">年</div>
+            </div>
+        </div>
+        <div class="shui shui-a">
+            <div class="shui-c">
+            </div>
+            <div class="shui-b"></div>
+        </div>
+    </div>
+</div>
+<div class="deng-box3">
+    <div class="deng">
+        <div class="xian">
+        </div>
+        <div class="deng-a">
+            <div class="deng-b">
+                <div class="deng-t">新</div>
+            </div>
+        </div>
+        <div class="shui shui-a">
+            <div class="shui-c"></div>
+            <div class="shui-b">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="deng-box1">
+    <div class="deng">
+        <div class="xian">
+        </div>
+        <div class="deng-a">
+            <div class="deng-b">
+                <div class="deng-t">乐</div>
+            </div>
+        </div>
+        <div class="shui shui-a">
+            <div class="shui-c"></div>
+            <div class="shui-b"></div>
+        </div>
+    </div>
+</div>
+<div class="deng-box">
+    <div class="deng">
+        <div class="xian">
+        </div>
+        <div class="deng-a">
+            <div class="deng-b">
+                <div class="deng-t">快</div>
+            </div>
+        </div>
+        <div class="shui shui-a">
+            <div class="shui-c">
+            </div>
+            <div class="shui-b"></div>
+        </div>
+    </div>
+</div>
+<style type="text/css">
+  .deng-box {
+      position: fixed;
+      top: -40px;
+      right: 150px;
+      z-index: 9999;
+      pointer-events: none;
+  }
+  .deng-box1 {
+      position: fixed;
+      top: -30px;
+      right: 10px;
+      z-index: 9999;
+      pointer-events: none
+  }
+  .deng-box2 {
+      position: fixed;
+      top: -40px;
+      left: 150px;
+      z-index: 9999;
+      pointer-events: none
+  }
+  .deng-box3 {
+      position: fixed;
+      top: -30px;
+      left: 10px;
+      z-index: 9999;
+      pointer-events: none
+  }
+  .deng-box1 .deng,
+  .deng-box3 .deng {
+      position: relative;
+      width: 120px;
+      height: 90px;
+      margin: 50px;
+      background: #d8000f;
+      background: rgba(216, 0, 15, .8);
+      border-radius: 50% 50%;
+      -webkit-transform-origin: 50% -100px;
+      -webkit-animation: swing 5s infinite ease-in-out;
+      box-shadow: -5px 5px 30px 4px #fc903d
+  }
+  .deng {
+      position: relative;
+      width: 120px;
+      height: 90px;
+      margin: 50px;
+      background: #d8000f;
+      background: rgba(216, 0, 15, .8);
+      border-radius: 50% 50%;
+      -webkit-transform-origin: 50% -100px;
+      -webkit-animation: swing 3s infinite ease-in-out;
+      box-shadow: -5px 5px 50px 4px #fa6c00
+  }
+  .deng-a {
+      width: 100px;
+      height: 90px;
+      background: #d8000f;
+      background: rgba(216, 0, 15, .1);
+      margin: 12px 8px 8px 8px;
+      border-radius: 50% 50%;
+      border: 2px solid #dc8f03
+  }
+  .deng-b {
+      width: 45px;
+      height: 90px;
+      background: #d8000f;
+      background: rgba(216, 0, 15, .1);
+      margin: -4px 8px 8px 26px;
+      border-radius: 50% 50%;
+      border: 2px solid #dc8f03
+  }
+  .xian {
+      position: absolute;
+      top: -20px;
+      left: 60px;
+      width: 2px;
+      height: 20px;
+      background: #dc8f03
+  }
+  .shui-a {
+      position: relative;
+      width: 5px;
+      height: 20px;
+      margin: -5px 0 0 59px;
+      -webkit-animation: swing 4s infinite ease-in-out;
+      -webkit-transform-origin: 50% -45px;
+      background: orange;
+      border-radius: 0 0 5px 5px
+  }
+  .shui-b {
+      position: absolute;
+      top: 14px;
+      left: -2px;
+      width: 10px;
+      height: 10px;
+      background: #dc8f03;
+      border-radius: 50%
+  }
+  .shui-c {
+      position: absolute;
+      top: 18px;
+      left: -2px;
+      width: 10px;
+      height: 35px;
+      background: orange;
+      border-radius: 0 0 0 5px
+  }
+  .deng:before {
+      position: absolute;
+      top: -7px;
+      left: 29px;
+      height: 12px;
+      width: 60px;
+      content: " ";
+      display: block;
+      z-index: 999;
+      border-radius: 5px 5px 0 0;
+      border: solid 1px #dc8f03;
+      background: orange;
+      background: linear-gradient(to right, #dc8f03, orange, #dc8f03, orange, #dc8f03)
+  }
+  .deng:after {
+      position: absolute;
+      bottom: -7px;
+      left: 10px;
+      height: 12px;
+      width: 60px;
+      content: " ";
+      display: block;
+      margin-left: 20px;
+      border-radius: 0 0 5px 5px;
+      border: solid 1px #dc8f03;
+      background: orange;
+      background: linear-gradient(to right, #dc8f03, orange, #dc8f03, orange, #dc8f03)
+  }
+  .deng-t {
+      font-family: 黑体, Arial, Lucida Grande, Tahoma, sans-serif;
+      font-size: 3.2rem;
+      color: #dc8f03;
+      font-weight: 700;
+      line-height: 85px;
+      text-align: center
+  }
+  .night .deng-box,
+  .night .deng-box1,
+  .night .deng-t {
+      background: 0 0 !important
+  }
+  @-moz-keyframes swing {
+      0% {
+          -moz-transform: rotate(-10deg)
+      }
+      50% {
+          -moz-transform: rotate(10deg)
+      }
+      100% {
+          -moz-transform: rotate(-10deg)
+      }
+  }
+  @-webkit-keyframes swing {
+      0% {
+          -webkit-transform: rotate(-10deg)
+      }
+      50% {
+          -webkit-transform: rotate(10deg)
+      }
+      100% {
+          -webkit-transform: rotate(-10deg)
+      }
+  }
+</style>
+
+</body>
+
+</html>

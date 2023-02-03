@@ -1,0 +1,12 @@
+.my ul {
+    width: 1024px;
+}
+.my li {
+    width: 200px;   /*如果显示三列 则width改为70px*/
+    float: left;
+    display: block;
+}
+ a:link {text-decoration: none; color:blue;}/*未访问的链接显示为蓝色，text-decoration:none将下划线隐藏*/
+    a:visited {color:black;} /*用户已访问过的链接显示黑色*/
+    a:hover {color:pink;}   /*鼠标放置在链接上时显示为粉色*/
+    a:active {color:yellow;}  /* 链接被点击那一刻显示黄色 */

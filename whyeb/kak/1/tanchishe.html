@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪吃蛇</title>
+
+</head>
+
+<body style="text-align:center;">
+
+    <body>
+        <canvas id="myCanvas" width="1024" height="800" style="border:1px solid #c3c3c3;"></canvas>
+        <script type="text/javascript">
+            var c = document.getElementById("myCanvas");
+            var time = 100; //蛇的速度 
+            var cxt = c.getContext("2d");
+            var x = y = 8;
+            var a = 0; //食物坐标 
+            var t = 10; //🐍身长 
+            var map = []; //记录蛇运行路径 
+            var size = 8; //蛇身单元大小 
+            var direction = 2; // 1 向上 2 向右 0 左 3下 
+            interval = window.setInterval(set_game_speed, time); // 移动蛇 
+            function set_game_speed() { // 移动蛇 
+                switch (direction) {
+                    case 1: y = y - size; break;
+                    case 2: x = x + size; break;
+                    case 0: x = x - size; break;
+                    case 3: y = y + size; break;
+                }
+                if (x > 1024 || y > 800 || x < 0 || y < 0) {
+                    alert("你挂了，继续努力吧!失败原因：碰壁了....."); window.location.reload();
+                }
+                for (var i = 0; i < map.length; i++) {
+                    if (parseInt(map[i].x) == x && parseInt(map[i].y) == y) {
+                        alert("你挂了，继续努力吧！失败原因：撞到自己了....."); window.location.reload();
+                    }
+                }
+                if (map.length > t) { //保持舍身长度 
+                    var cl = map.shift(); //删除数组第一项，并且返回原元素 
+                    cxt.clearRect(cl['x'], cl['y'], size, size);
+                };
+                map.push({ 'x': x, 'y': y }); //将数据添加到原数组尾部 
+                cxt.fillStyle = "#006699";//内部填充颜色 
+                cxt.strokeStyle = "#006699";//边框颜色 
+                cxt.fillRect(x, y, size, size);//绘制矩形 
+                if ((a * 8) == x && (a * 8) == y) { //吃食物 
+                    rand_frog(); t++;
+                }
+            }
+            document.onkeydown = function (e) { //改变蛇方向 
+                var code = e.keyCode - 37;
+                switch (code) {
+                    case 1: direction = 1; break;//上 
+                    case 2: direction = 2; break;//右 
+                    case 3: direction = 3; break;//下 
+                    case 0: direction = 0; break;//左 
+                }
+            }
+            // 随机放置食物 
+            function rand_frog() {
+                a = Math.ceil(Math.random() * 50);
+                cxt.fillStyle = "#000000";//内部填充颜色 
+                cxt.strokeStyle = "#000000";//边框颜色 
+                cxt.fillRect(a * 8, a * 8, 8, 8);//绘制矩形 
+            }
+            // 随机放置食物 
+            rand_frog(); 
+        </script>
+    </body>
+
+</html>

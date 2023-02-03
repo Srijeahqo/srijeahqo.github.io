@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>srijeahqo</title>
+		<link rel="icon" type="image/ipg" href="home/image/102201.jpg" />
+		<link rel="stylesheet" href="css/index.css" type="text/css">
+		<script type="text/javascript" src="home/js/index.js"></script>
+		<link rel="stylesheet" href="home/css/sptx.css">
+
+		<style type="text/css">
+			* {
+				font-size: 20px;
+			}
+
+			input {
+				outline: none;
+				border: #000000;
+			}
+
+			select {
+				outline: none;
+				border: #000000;
+			}
+
+			a {
+				text-decoration: none;
+			}
+		</style>
+		<script>
+			function chang() {
+
+				var http = document.getElementById("key").value;
+				var baidu = "https://www.baidu.com/s";
+				var sogou = "https://www.sogou.com/web";
+				var w360 = "https://www.so.com/s?ie=utf-8&fr=none&src=360sou_newhome";
+				var bing = "https://cn.bing.com/search";
+				var CSDN = "https://so.csdn.net/so/search";
+
+				if (http == "百度") {
+					document.getElementById("action").action = baidu;
+					document.getElementById("name").name = "wd";
+				}
+				if (http == "搜狗") {
+					document.getElementById("action").action = sogou;
+					document.getElementById("name").name = "query";
+				}
+				if (http == "360") {
+					document.getElementById("action").action = w360;
+					document.getElementById("name").name = "q";
+				}
+				if (http == "必应") {
+					document.getElementById("action").action = bing;
+					document.getElementById("name").name = "q";
+				}
+				if (http == "CSDN") {
+					document.getElementById("action").action = CSDN;
+					document.getElementById("name").name = "q";
+				}
+
+
+			}
+		</script>
+
+	</head>
+	<body>
+		<canvas id="cvs" style="z-index: -5; position: absolute;top: 0px;"></canvas>
+		<form id="action" action="https://www.baidu.com/s" method="get" target="_blank">
+			<div
+				style="height: 60px; width: 800px;margin: auto;margin-top: 150px;background-color: #000000;color: white;opacity:0.7;border-style: solid;border-color: wheat;border-radius: 15px;border-width: 2px;">
+
+				<div style="float: left;margin-left: 10px;">
+					<select name="key" id="key" onchange="chang()"
+						style="height:60px ;padding-left: 0px; text-align:center;width: 150px;background-color: #000000;color: white;opacity:0.7;">
+
+						<option value="百度">百度</option>
+						<option value="搜狗">搜狗</option>
+						<option value="360">360</option>
+						<option value="必应">必应</option>
+						<option value="CSDN">CSDN</option>
+
+					</select>
+
+				</div>
+				<div style="float: left;">
+					<input id="name" name="wd"
+						style="height:60px;width: 500px;background-color: #000000;color: white;opacity:0.7;"
+						type="text" />
+				</div>
+				<div>
+
+					<input style="height:60px ;width: 100px;background-color: #000000;color: white;" type="submit"
+						value="搜索" />
+
+				</div>
+
+			</div>
+			<div>
+
+
+
+
+			</div>
+			<div></div>
+
+
+
+		</form>
+		<div class="buxz">
+
+
+			<section class="main">
+				<div class="box">
+					<!--  
+				<div><a target="right" href="url">
+						<div class="item">
+							<div class="logo">
+								<img src="照片" alt=" Coding">名
+							</div>
+							<div class="desc">简介</div>
+						</div>
+					</a>
+					-->
+					<div><a target="right" href="home/html/jianjie.html">
+							<div class="item">
+								<div class="logo">
+									<img src="home/image/02.png" alt=" Coding"> 简介
+								</div>
+								<div class="desc">网站简介</div>
+							</div>
+						</a>
+
+
+
+						<div><a target="right" href="https://www.zxiyun.com/">
+								<div class="item">
+									<div class="logo">
+										<img src="home/image/224.png" alt=" Coding">朝晞小屋
+									</div>
+									<div class="desc">朝晞小屋-为新手站长打造最好的技术博客</div>
+								</div>
+							</a>
+							<div><a target="right" href="https://github.com/srijea">
+									<div class="item">
+										<div class="logo">
+											<img src="home/image/102201.jpg" alt=" Coding">srijeahqo
+										</div>
+										<div class="desc">github</div>
+									</div>
+								</a>
+
+								<div><a target="right" href="https://www.bilibili.com/">
+										<div class="item">
+											<div class="logo">
+												<img src="home/image/171709.png" alt=" Coding">哔哩哔哩
+											</div>
+											<div class="desc">哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</div>
+										</div>
+									</a>
+									<div><a target="right" href="https://www.iqiyi.com/">
+											<div class="item">
+												<div class="logo">
+													<img src="home/image/172115.png" alt=" Coding">爱奇艺
+												</div>
+												<div class="desc">爱奇艺-在线视频网站-海量正版高清视频在线观看</div>
+											</div>
+										</a>
+										<div><a target="right" href="https://v.qq.com/">
+												<div class="item">
+													<div class="logo">
+														<img src="home/image/2249.png" alt=" Coding">腾讯视频
+													</div>
+													<div class="desc">腾讯视频 - 中国领先的在线视频媒体平台,海量高清视频在线观看</div>
+												</div>
+											</a>
+											<div><a target="right" href="https://youku.com/channel/webhome">
+													<div class="item">
+														<div class="logo">
+															<img src="home/image/172554.png" alt=" Coding">优酷
+														</div>
+														<div class="desc">优酷 - 为好内容全力以赴 - 海量正版高清视频在线观看</div>
+													</div>
+												</a>
+												<div><a target="right" href="https://www.chinesehongker.com/">
+														<div class="item">
+															<div class="logo">
+																<img src="home/image/01173247.png" alt=" Coding">红客联盟
+															</div>
+															<div class="desc">红客联盟-老牌黑客组织-IT行业综合交流社区！</div>
+														</div>
+													</a>
+
+
+
+
+												</div>
+												<div class="box">
+												</div>
+			</section>
+		</div>
+
+	</body>
+</html>
